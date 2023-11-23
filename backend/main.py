@@ -23,8 +23,9 @@ def create_app(config):
         db.create_all()
 
     api = Api(app, doc='/docs')
-    aoi.add_namespace(recipe_ns)
-    aoi.add_namespace(auth_ns)
+
+    api.add_namespace(recipe_ns)
+    api.add_namespace(auth_ns)
 
 
 
@@ -36,4 +37,4 @@ def create_app(config):
             'User': User
         }
     
-return app
+    return app
